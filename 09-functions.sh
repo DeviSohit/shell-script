@@ -6,7 +6,6 @@ LOGFILE=/tmp/SCRIPT_NAME-$DATE.log
 INSTALLED=$(yum list installed)
 INSTALLED_FILE=$(echo $INSTALLED | grep mysql)
 
-echo "$INSTALLED_FILE is already installed"
 
 R="\e[31m"
 G="\e[32m"
@@ -25,9 +24,11 @@ if [ $USERID -ne 0 ] ; then
     echo "Please take root access to run this script"
     exit 1
 fi
-
+echo "$INSTALLED_FILE is already installed"
 yum install mysql -y &>> $LOGFILE
 VALIDATE $? "Installing mysql"
 
 yum install postfix -y &>> $LOGFILE
 VALIDATE $? "Installing postfix"
+
+
