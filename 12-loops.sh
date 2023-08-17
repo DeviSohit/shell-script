@@ -27,8 +27,8 @@ if [ $USERID -ne 0 ] ; then
 fi
 for i in $@
 do
-    if [ $@ -installed ] ; then
-    echo "$@ already installed"
+    if [ $mysql -installed ] ; then
+    echo "$mysql already installed"
     exit 1
     fi
     yum install $i -y &>> $LOGFILE
