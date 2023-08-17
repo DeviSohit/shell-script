@@ -3,6 +3,7 @@
 #writing script to install packages and storing random output into logfile and applying colors to it
 DATE=$(date +%F)
 SCRIPT_NAME=$0
+ARGS=$@
 LOGFILE=/tmp/SCRIPT_NAME-$DATE.log
 
 R="\e[31m"
@@ -28,7 +29,7 @@ for i in $@
 do
     yum install $i -y &>> $LOGFILE
 done
-VALIDATE $? "Installing $@"
+VALIDATE $? "Installing $ARGS"
  
 
 
