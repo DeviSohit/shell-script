@@ -3,6 +3,8 @@
 DATE=$(date +%F)
 SCRIPT_NAME=$0
 LOGFILE=/tmp/SCRIPT_NAME-$DATE.log
+INSTALLED=$(yum list installed)
+INSTALLED_FILE=$($INSTALLED | grep mysql)
 
 R="\e[31m"
 G="\e[32m"
