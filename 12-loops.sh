@@ -4,7 +4,7 @@
 DATE=$(date +%F)
 SCRIPT_NAME=$0
 ARGS=$@
-LOGFILE=/tmp/SCRIPT_NAME-$DATE.log
+LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 
 R="\e[31m"
 G="\e[32m"
