@@ -27,9 +27,6 @@ if [ $USERID -ne 0 ] ; then
 fi
 for i in $@
 do
-    if [ $@ -i ] ; then
-    echo "$@ is already installed"
-    fi
     yum install $i -y &>> $LOGFILE
     VALIDATE $? "Installing $@"
 done
