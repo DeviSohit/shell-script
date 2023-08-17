@@ -8,7 +8,11 @@ LOGFILE=/tmp/SCRIPT_NAME-$DATE.log
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
-
+for i in $@
+do
+    yum install $i -y &>> $LOGFILE
+    VALIDATE $? "Installing $@"
+done
 VALIDATE(){
 
 if [ $1 -ne 0 ] ; then
@@ -17,7 +21,6 @@ if [ $1 -ne 0 ] ; then
 else 
     echo -e "$2.......$G SUCCESS $N"
 fi
-
 }
 
 USERID=$(id -u)
@@ -26,9 +29,6 @@ if [ $USERID -ne 0 ] ; then
     exit 1
 fi
 
-for i in $@
-do
-    yum install $i -y &>> $LOGFILE
-done 
+ 
 
 
