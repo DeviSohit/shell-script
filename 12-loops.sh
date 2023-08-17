@@ -27,7 +27,7 @@ if [ $USERID -ne 0 ] ; then
 fi
 for i in $@
 do
-    yum install $i -y &>> $LOGFILE
+    yum install $i -y 
 done
 VALIDATE $? "Installing $ARGS"
  
