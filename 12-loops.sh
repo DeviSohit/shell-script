@@ -28,8 +28,9 @@ fi
 for i in $ARGS
 do
     yum install $i -y 
+    VALIDATE $? "Installing $ARGS"
 done
-VALIDATE $? "Installing $ARGS"
+
  
 
 
