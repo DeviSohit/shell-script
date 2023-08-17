@@ -3,7 +3,7 @@
 #writing script to install packages and storing random output into logfile and applying colors to it
 DATE=$(date +%F)
 SCRIPT_NAME=$0
-ARGS=$@
+#ARGS=$@
 LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 
 R="\e[31m"
@@ -25,10 +25,10 @@ if [ $USERID -ne 0 ] ; then
     echo "Please take root access to run this script"
     exit 1
 fi
-for i in $ARGS
+for i in $@
 do
-    yum install $i -y 
-    VALIDATE $? "Installing $ARGS"
+    yum install $i -y &>> $LOGFILE
+    VALIDATE $? "Installing $@"
 done
 
  
