@@ -25,7 +25,7 @@ if [ $USERID -ne 0 ] ; then
     echo "Please take root access to run this script"
     exit 1
 fi
-for i in $@
+for i in $ARGS
 do
     yum install $i -y 
 done
