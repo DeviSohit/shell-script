@@ -9,7 +9,7 @@ LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
-INSTALLED_FILES=$(yum list installed | grep $@)
+
 VALIDATE(){
 
 if [ $1 -ne 0 ] ; then
@@ -19,17 +19,6 @@ else
     echo -e "$2.......$G SUCCESS $N"
 fi
 }
-
-if [ $INSTALLED_FILES -ne 0 ] ; then
-    echo -e "$@ already installed"
-    exit 1
-else 
-    for i in $@
-do
-    yum install $i -y &>> $LOGFILE
-    VALIDATE $? "Installing "
-done
-fi
 
 USERID=$(id -u)
 if [ $USERID -ne 0 ] ; then
