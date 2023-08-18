@@ -36,6 +36,7 @@ do
 
     else
     echo -e "$Y $i already installed $N"
+    fi
 done
 
  
