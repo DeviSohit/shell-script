@@ -10,6 +10,6 @@ echo "2 weeks older files are $FILES_TO_DELETE"
 
 while read line
 do 
-    echo "Deleting $line"
-    rm -rf $line &>> $LOGFILE
+    echo "Deleting $line" &>> $LOGFILE
+    rm -rf $line 
 done <<< $FILES_TO_DELETE
