@@ -6,5 +6,6 @@
 DIRECTORY=/home/centos/reversetext.txt
 while read line
 do
- rev $line
+    echo "Revesring the text $line"
+    rev $line
  done <<< $DIRECTORY
