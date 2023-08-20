@@ -5,7 +5,7 @@
 #echo "$REV"
 DIRECTORY=/home/centos/reversetext.txt
 EXISTED_TEXT=$(cat $DIRECTORY)
-echo $EXISTED_TEXT
+echo "Already existed text is: $EXISTED_TEXT"
 while read line
 do
     echo "Revesring the text $line"
