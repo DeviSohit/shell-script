@@ -7,5 +7,5 @@ while read line
 do 
     echo "replacing text globally"
    # echo -e "$Y $REPLACE_WORD $line $N"
-   $(sed -e 's/sbin/devi') $line
+   $(sed -i 's/sbin/devi') $line
 done <<< $DIRECTORY
