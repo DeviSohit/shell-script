@@ -8,4 +8,4 @@ while read line
 do
    echo "reversing text $line"
    
-done < $DIRECTORY
+done <<< $DIRECTORY
