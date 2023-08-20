@@ -1,6 +1,6 @@
 #!/bin/bash
 DIRECTORY=/home/centos/replace.txt
-REPLACE_WORD=$(echo $DIRECTORY/sed -e 's/sbin/devi/g')
+REPLACE_WORD=$(sed -e 's/sbin/devi/g')
 Y="\e[33m"
 N="\e[0m"
 while read line
