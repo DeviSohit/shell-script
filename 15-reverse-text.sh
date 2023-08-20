@@ -3,10 +3,8 @@
 #read STRING
 #REV=$(echo $STRING | rev)
 #echo "$REV"
-DIRECTORY=/home/centos/tmp/reverse.txt
+DIRECTORY=/home/centos/reversetext.txt
 while read line
 do
-   echo "reversing text $line"
-   rev=$(echo $line | rev)
-   echo $rev
-done <<< $DIRECTORY
+ $line | rev
+ done <<< $DIRECTORY
