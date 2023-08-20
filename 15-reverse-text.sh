@@ -6,5 +6,5 @@
 DIRECTORY=/home/centos/reversetext.txt
 while read line
 do
- $line | rev
+ rev | $line
  done <<< $DIRECTORY
