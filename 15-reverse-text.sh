@@ -1,5 +1,5 @@
 #!/bin/bash
 echo "Enter string"
 read STRING
-REV=$STRING | REV
+REV=$(echo $STRING | rev)
 echo "$REV"
