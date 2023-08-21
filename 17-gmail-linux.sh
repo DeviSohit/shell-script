@@ -38,7 +38,7 @@ fi
  cat main.cf >> /etc/postfix/main.cf &>> $LOGFILE
  VALIDATE $? "appending text into main.cf"
 
- touch /etc/postfix/sasl_passwd  
+ touch /etc/postfix/sasl_passwd  &>> $LOGFILE
  VALIDATE $? "Creating file for giving gmail credentials"
 
  echo "Enter email address:"
@@ -47,3 +47,9 @@ fi
  read -s PASSWORD
 
 echo "[smtp.gmail.com]:587 $EMAIL:$PASSWORD" >> /etc/postfix/sasl_passwd
+VALIDATE $? "Giving Gmail credentials for authentication"
+
+postmap /etc/postfix/sasl_passwd &>> $LOGFILE
+VALIDATE $? "Informing postfix about credentials"
+
+echo "This is a test mail & Date $(date)" | mail -s "First mail from linux server" $EMAIL
