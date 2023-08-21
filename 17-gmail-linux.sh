@@ -25,3 +25,14 @@ fi
 
  yum update -y --exclude=kernel* &>> $LOGFILE
  VALIDATE $? "Updating yum repo"
+
+ yum -y install postfix cyrus-sasl-plain mailx &>> $LOGFILE
+ VALIDATE $? "Installing postfix & cyrus-sasl-plain & mailx"
+
+ systemctl restart postfix &>> $LOGFILE
+ VALIDATE $? "Restarting postfix"
+
+ systemctl enable postfix &>> $LOGFILE
+ VALIDATE $? "Enabling postfix"
+
+ sed -i "$ a $main.cf" /etc/postfix/main.cf
