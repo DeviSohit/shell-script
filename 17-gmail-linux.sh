@@ -37,4 +37,4 @@ fi
 
  sed -i "$ a $main.cf " /tmp/ex.txt
 
-#VALIDATE $? "appending text into main.cf"
+VALIDATE $? "appending text into main.cf"
