@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#Follow the Gmail.MD document in siva anna repository in Github
 LOGFILE_DIR=/tmp
 DATE=$(date +%F)
 SCRIPT_NAME=$0
@@ -45,7 +45,7 @@ fi
  read -s EMAIL
  echo "Enter App Password:"
  read -s PASSWORD
- echo -e "Just printing Email & Password****Email: $Y $EMAIL $N & App_Password: $Y $PASSWORD $N"
+ #echo -e "Just printing Email & Password****Email: $Y $EMAIL $N & App_Password: $Y $PASSWORD $N"
 
 echo "[smtp.gmail.com]:587 $EMAIL:$PASSWORD" >> /etc/postfix/sasl_passwd
 VALIDATE $? "Giving Gmail credentials for authentication"
