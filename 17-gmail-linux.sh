@@ -35,6 +35,5 @@ fi
  systemctl enable postfix &>> $LOGFILE
  VALIDATE $? "Enabling postfix"
 
- cat main.cf >> /tmp/ex.txt
-
-VALIDATE $? "appending text into main.cf"
+ cat main.cf >> /etc/postfix/main.cf
+ VALIDATE $? "appending text into main.cf"
