@@ -35,6 +35,11 @@ fi
  systemctl enable postfix &>> $LOGFILE
  VALIDATE $? "Enabling postfix"
 
- sed -i "$ a $main.cf " /tmp/ex.txt
+ sed -i "$ a 'relayhost = [smtp.gmail.com]:587
+smtp_use_tls = yes
+smtp_sasl_auth_enable = yes
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+smtp_sasl_security_options = noanonymous
+smtp_sasl_tls_security_options = noanonymous' " /tmp/ex.txt
 
 VALIDATE $? "appending text into main.cf"
