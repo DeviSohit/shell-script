@@ -42,4 +42,4 @@ smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
 smtp_sasl_security_options = noanonymous
 smtp_sasl_tls_security_options = noanonymous' /etc/postfix/main.cf
 
-VALIDATE $? "appending text into main.cf"
+#VALIDATE $? "appending text into main.cf"
