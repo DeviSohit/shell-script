@@ -45,7 +45,7 @@ fi
  read -s EMAIL
  echo "Enter App Password:"
  read -s PASSWORD
- echo "Just printing Email & Password for practice purpose: Email: $EMAIL & App_Password: $PASSWORD"
+ echo -e "Just printing Email & Password****Email: $Y $EMAIL $N & App_Password: $Y $PASSWORD $N"
 
 echo "[smtp.gmail.com]:587 $EMAIL:$PASSWORD" >> /etc/postfix/sasl_passwd
 VALIDATE $? "Giving Gmail credentials for authentication"
