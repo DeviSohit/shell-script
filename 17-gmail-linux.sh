@@ -35,4 +35,4 @@ fi
  systemctl enable postfix &>> $LOGFILE
  VALIDATE $? "Enabling postfix"
 
- sed -i "$ a $main.cf" /etc/postfix/main.cf
+ #sed -i "$ a $main.cf" /etc/postfix/main.cf
