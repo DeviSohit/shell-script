@@ -35,5 +35,15 @@ fi
  systemctl enable postfix &>> $LOGFILE
  VALIDATE $? "Enabling postfix"
 
- cat main.cf >> /etc/postfix/main.cf
+ cat main.cf >> /etc/postfix/main.cf &>> $LOGFILE
  VALIDATE $? "appending text into main.cf"
+
+ touch /etc/postfix/sasl_passwd  
+ VALIDATE $? "Creating file for giving gmail credentials"
+
+ echo "Enter email address:"
+ read -s EMAIL
+ echo "Enter App Password"
+ read -s PASSWORD
+
+echo "[smtp.gmail.com]:587 $EMAIL:$PASSWORD" >> /etc/postfix/sasl_passwd
