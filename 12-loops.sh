@@ -1,5 +1,4 @@
 #!/bin/bash
-#!/bin/bash
 #writing script to install packages and storing random output into logfile and applying colors to it
 DATE=$(date +%F)
 SCRIPT_NAME=$0
